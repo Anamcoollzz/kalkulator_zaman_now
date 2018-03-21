@@ -10,9 +10,16 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author IndahnyaBerbagi
+ * @author Hairul Anam              162410101128
+ * @author Muhammad Yusuf Auliya    162410101138
  */
 public class LoginForm extends javax.swing.JFrame {
+    
+    private final String[] myUsername = {"PapaAnam", "Ucup"};
+    private final char [][] myPassword = {
+        { 'P', 'a', 'p', 'a', 'A', 'n', 'a', 'm' },
+        { 'U', 'c', 'u', 'p', 'U', 'c', 'u', 'p' }
+    };
 
     /**
      * Creates new form LoginForm
@@ -20,6 +27,14 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    
+    private boolean in_array(String arr[], String keyword){
+        for (String a : arr) {
+            if(a.equals(keyword))
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -37,6 +52,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Form Masuk");
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 
@@ -110,11 +126,14 @@ public class LoginForm extends javax.swing.JFrame {
         if(Arrays.equals(pass, new char[]{})){
             JOptionPane.showMessageDialog(null, "Password tidak boleh kosong");
         }
-//        System.out.println(passwordTxt.getPassword());
-        if(!passwordTxt.getPassword().equals("") && !usernameTxt.getText().equals("")){
-            if(usernameTxt.getText().equals("PapaAnam") && Arrays.equals(passwordTxt.getPassword(), new char[]{
-                'P', 'a', 'p', 'a', 'A', 'n', 'a', 'm'
-            })){
+        if(!Arrays.equals(pass, new char[]{}) && !usernameTxt.getText().equals("")){
+            if(
+                in_array(myUsername, usernameTxt.getText()) && 
+                (
+                    Arrays.equals(passwordTxt.getPassword(), myPassword[0]) ||
+                    Arrays.equals(passwordTxt.getPassword(), myPassword[1])
+                )
+            ){
                 Kalkulator kal = new Kalkulator(usernameTxt.getText());
                 kal.setVisible(true);
                 this.dispose();
