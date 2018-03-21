@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author IndahnyaBerbagi
+ * @author Hairul Anam              162410101128
+ * @author Muhammad Yusuf Auliya    162410101138
  */
 public class Kalkulator extends javax.swing.JFrame {
 
