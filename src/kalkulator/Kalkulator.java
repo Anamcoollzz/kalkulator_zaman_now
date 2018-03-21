@@ -134,9 +134,15 @@ public class Kalkulator extends javax.swing.JFrame {
         usernameTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kalkulator Zaman Now");
         setMinimumSize(new java.awt.Dimension(200, 280));
         setPreferredSize(new java.awt.Dimension(220, 300));
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logTxt.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -162,6 +168,18 @@ public class Kalkulator extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton1MouseReleased(evt);
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
@@ -436,6 +454,28 @@ public class Kalkulator extends javax.swing.JFrame {
     private void btnBagiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBagiMouseClicked
         hitungOperator("/");
     }//GEN-LAST:event_btnBagiMouseClicked
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+//        System.out.println(evt.getKeyChar());
+//        System.out.println(evt.getKeyCode());
+//        System.out.println(evt.getKeyLocation());
+    }//GEN-LAST:event_formKeyTyped
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        System.out.println("Mouse entered");
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        System.out.println("Mouse exited");
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        System.out.println("Mouse pressed");
+    }//GEN-LAST:event_jButton1MousePressed
+
+    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+        System.out.println("Mouse released");
+    }//GEN-LAST:event_jButton1MouseReleased
 
     /**
      * @param args the command line arguments
